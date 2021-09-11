@@ -17,9 +17,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.indigo,
       body: SafeArea(
         child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/onboarding_background_image.png"),
+              fit: BoxFit.cover,
+            ),
+          ),
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
           width: _screenWidth,
           height: _screenHeight,
@@ -27,20 +32,32 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                alignment: Alignment.centerRight,
-                width: double.infinity,
-                margin: EdgeInsets.only(top: 20),
-                child: Text(
-                  "LOGIN",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    // fontWeight: FontWeight.bold,
-                  ),
+                child:
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      child:Image.asset(
+                        'assets/images/loginlogo.png',
+                      ),
+                    ),
+                    Container(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        "LOGIN",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          // fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               SizedBox(
-                height: 170,
+                height: 120,
               ),
               Container(
                 width: double.infinity,
