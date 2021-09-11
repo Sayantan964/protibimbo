@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:protibimbo/LoginScreen.dart';
+import 'package:protibimbo/OnboardingScreen.dart';
 import 'package:protibimbo/RegistrationScreen.dart';
 import 'package:protibimbo/Splashscreen.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -18,11 +18,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
       home: SplashScreen(),
     );
   }
 }
-
