@@ -10,38 +10,37 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   Widget build(BuildContext context) {
     final double _screenWidth = MediaQuery.of(context).size.width;
     final double _screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.indigo,
+      resizeToAvoidBottomInset: true,
       body: SafeArea(
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/images/onboarding_background_image.png"),
+              image:
+                  AssetImage("assets/images/onboarding_background_image.png"),
               fit: BoxFit.cover,
             ),
           ),
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
           width: _screenWidth,
           height: _screenHeight,
-
           child: SingleChildScrollView(
             physics: AlwaysScrollableScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  child:
-                  Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                         alignment: Alignment.centerLeft,
-                        child:Image.asset(
+                        child: Image.asset(
                           'assets/images/loginlogo.png',
                         ),
                       ),
@@ -60,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 120,
+                  height: 80,
                 ),
                 Container(
                   width: double.infinity,
@@ -70,8 +69,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 12,
+                    ),
                   ),
-                ),
                 ),
                 SizedBox(
                   height: 15,
@@ -113,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 TextField(
                   keyboardType: TextInputType.visiblePassword,
-                  obscureText:  true,
+                  obscureText: true,
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.all(20.0),
                     prefixIcon: Icon(Icons.lock_outline),
@@ -153,7 +152,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: ElevatedButton(
                     onPressed: null,
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.yellow[600]),
+                      backgroundColor:
+                          MaterialStateProperty.all(Colors.yellow[600]),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30.0)),
@@ -183,17 +183,18 @@ class _LoginScreenState extends State<LoginScreen> {
                 Container(
                   alignment: Alignment.center,
                   child: TextButton(
-                        onPressed: (){
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>RegistrationScreen()));
-                        },
-                        child: Text(
-                          'Create A New Account ->',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                          ),
-                        ),
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => RegistrationScreen()));
+                    },
+                    child: Text(
+                      'Create A New Account ->',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
                       ),
+                    ),
+                  ),
                 ),
               ],
             ),
