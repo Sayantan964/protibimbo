@@ -22,6 +22,12 @@ class VerifyPhoneNoScreenState extends State<VerifyPhoneNoScreen>{
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child:Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/onboarding_background_image.png"),
+              fit: BoxFit.cover,
+            ),
+          ),
           padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 15),
           width: _screenWidth,
           height: _screenHeight,
