@@ -33,16 +33,28 @@ class RegistrationScreenState extends State<RegistrationScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  alignment: Alignment.centerRight,
-                  width: double.infinity,
-                  margin: EdgeInsets.only(top: 20),
-                  child: Text(
-                    "REGISTER",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      // fontWeight: FontWeight.bold,
-                    ),
+                  child:
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        child:Image.asset(
+                          'assets/images/loginlogo.png',
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          "REGISTER",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            // fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(
