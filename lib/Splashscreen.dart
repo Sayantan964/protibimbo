@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.indigo,
+      backgroundColor: Color(0xff3E50B4),
       body: Stack(
         children: [
           Align(
@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   color: Colors.transparent,
                   shape: BoxShape.circle,
                   boxShadow: [
-                    BoxShadow(blurRadius: 2000, color: Colors.indigo),
+                    BoxShadow(blurRadius: 2000, color: Color(0xff3E50B4)),
                   ]),
               child: Image.asset(
                 'assets/images/protibimbo_logo.png',
