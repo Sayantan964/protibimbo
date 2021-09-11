@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:protibimbo/LoginScreen.dart';
+import 'package:protibimbo/OnboardingScreen.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -12,9 +13,9 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 5),
-            () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => LoginScreen())));
+        Duration(seconds: 3),
+        () => Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => OnboardingScreen())));
   }
 
   @override
@@ -49,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
               padding: const EdgeInsets.only(bottom: 10.0),
               child: Text(
                 'But also the leap into electronic typesetting,\n'
-                    '         remaining essentially unchanged',
+                '         remaining essentially unchanged',
                 style: TextStyle(color: Colors.white, fontSize: 12),
               ),
             ),
