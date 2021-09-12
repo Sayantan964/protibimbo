@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 15,
                 ),
                 TextField(
-                  keyboardType: TextInputType.phone,
+                  keyboardType: TextInputType.emailAddress,
                   onEditingComplete: null,
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.mail_outline),
