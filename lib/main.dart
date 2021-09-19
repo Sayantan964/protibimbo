@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:protibimbo/HomeScreen.dart';
 import 'package:protibimbo/LoginScreen.dart';
 import 'package:protibimbo/OnboardingScreen.dart';
 import 'package:protibimbo/RegistrationScreen.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: HomeScreen(),
     );
   }
 }
