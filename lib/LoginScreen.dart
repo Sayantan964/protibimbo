@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:protibimbo/RegistrationScreen.dart';
+import 'package:protibimbo/HomeScreen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -150,7 +151,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 55,
                   width: 180,
                   child: ElevatedButton(
-                    onPressed: null,
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => HomeScreen()));
+                    },
                     style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(Colors.yellow[600]),
