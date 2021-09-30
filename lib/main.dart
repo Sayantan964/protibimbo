@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:protibimbo/HomeScreen.dart';
-import 'package:protibimbo/LoginScreen.dart';
-import 'package:protibimbo/OnboardingScreen.dart';
-import 'package:protibimbo/RegistrationScreen.dart';
-import 'package:protibimbo/Splashscreen.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:protibimbo/models/PostModel.dart';
+import 'package:protibimbo/views/screens/CustomPostWidget.dart';
+import 'package:protibimbo/views/screens/HomeScreen.dart';
+import 'package:protibimbo/views/screens/LoginScreen.dart';
+import 'package:protibimbo/views/screens/OnboardingScreen.dart';
+import 'package:protibimbo/views/screens/RegistrationScreen.dart';
+import 'package:protibimbo/views/screens/Splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,10 +19,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Protibimbo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        textTheme: TextTheme(
+          bodyText1: GoogleFonts.poppins(color: Colors.black, fontSize: 20),
+          bodyText2: GoogleFonts.poppins(color: Colors.black, fontSize: 16),
+        ),
+        // primarySwatch: Colors.transparent,
       ),
       home: SplashScreen(),
     );
