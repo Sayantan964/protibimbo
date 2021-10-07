@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:protibimbo/views/screens/CreatePollScreen.dart';
+import 'package:protibimbo/views/screens/ExplorePeopleScreen.dart';
+import 'package:protibimbo/views/screens/NotificationScreen.dart';
 import 'package:protibimbo/views/screens/HomeScreen.dart';
 import 'package:protibimbo/views/screens/MyPostScreen.dart';
+import 'package:protibimbo/views/screens/PlaylistScreen.dart';
+import 'package:protibimbo/views/screens/ViewPollScreen.dart';
 
 class CustomNavigationDrawer extends StatefulWidget {
   const CustomNavigationDrawer({Key? key}) : super(key: key);
@@ -11,6 +16,16 @@ class CustomNavigationDrawer extends StatefulWidget {
 }
 
 class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     // final double _screenHeight = MediaQuery.of(context).size.height;
@@ -107,7 +122,10 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                         color: Colors.grey[800],
                       )),
                     ),
-                    onTap: null,
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => ExplorePeopleScreen()));
+                    },
                   ),
                   ListTile(
                     leading: Image.asset(
@@ -146,7 +164,10 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                         color: Colors.grey[800],
                       )),
                     ),
-                    onTap: null,
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => PlaylistScreen()));
+                    },
                   ),
                   ListTile(
                     leading: Image.asset(
@@ -165,6 +186,26 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       )),
                     ),
                     onTap: null,
+                  ),
+                  ListTile(
+                    leading: Icon(
+                      Icons.poll_outlined,
+                      size: 30,
+                      color: Colors.black,
+                    ),
+                    title: Text(
+                      'Poll',
+                      style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                        color: Colors.grey[800],
+                      )),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => ViewPollScreen()));
+                    },
                   ),
                   ListTile(
                     leading: Image.asset(
