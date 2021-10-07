@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:protibimbo/models/PostModel.dart';
 import 'package:protibimbo/views/screens/CustomPostWidget.dart';
+import 'package:protibimbo/views/screens/FriendProfileScreen.dart';
+import 'package:protibimbo/views/screens/FriendRequestPeofileScreen.dart';
 import 'package:protibimbo/views/screens/HomeScreen.dart';
 import 'package:protibimbo/views/screens/LoginScreen.dart';
 import 'package:protibimbo/views/screens/OnboardingScreen.dart';
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
         ),
         // primarySwatch: Colors.transparent,
       ),
-      home: SplashScreen(),
+      home: FriendProfileScreen(),
     );
   }
 }
