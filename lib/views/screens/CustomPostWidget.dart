@@ -15,18 +15,21 @@ class CustomPostWidget extends StatefulWidget {
 
 class _CustomPostWidgetState extends State<CustomPostWidget> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    // betterPlayerController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
-      // decoration: BoxDecoration(
-      //   // color: Colors.transparent,
-      //   boxShadow: [
-      //     BoxShadow(
-      //       color: Colors.white,
-      //       blurRadius: 2.0,
-      //     ),
-      //   ],
-      // ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -67,16 +70,16 @@ class _CustomPostWidgetState extends State<CustomPostWidget> {
                         )
                       ],
                     ),
-                    Expanded(
-                      child: Container(),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 5),
-                      child: IconButton(
-                        onPressed: null,
-                        icon: Icon(Icons.more_vert_outlined),
-                      ),
-                    ),
+                    // Expanded(
+                    //   child: Container(),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(right: 5),
+                    //   child: IconButton(
+                    //     onPressed: null,
+                    //     icon: Icon(Icons.more_vert_outlined),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
@@ -136,9 +139,9 @@ class _CustomPostWidgetState extends State<CustomPostWidget> {
             child: Row(
               children: [
                 InkWell(
-                  child: ImageIcon(
-                    AssetImage('assets/images/thumbs-up.png'),
-                    color: Colors.black,
+                  child: Icon(
+                    Icons.thumb_up_outlined,
+                    // color: Colors.black,
                   ),
                   onTap: () => print('like pressed'),
                 ),
@@ -146,9 +149,19 @@ class _CustomPostWidgetState extends State<CustomPostWidget> {
                   width: 15,
                 ),
                 InkWell(
-                  child: ImageIcon(
-                    AssetImage('assets/images/message-square.png'),
-                    color: Colors.black,
+                  child: Icon(
+                    Icons.thumb_down_outlined,
+                    // color: Colors.black,
+                  ),
+                  onTap: () => print('delete pressed'),
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                InkWell(
+                  child: Icon(
+                    Icons.mode_comment_outlined,
+                    // color: Colors.black,
                   ),
                   onTap: () => print('comment pressed'),
                 ),
@@ -156,11 +169,21 @@ class _CustomPostWidgetState extends State<CustomPostWidget> {
                   width: 15,
                 ),
                 InkWell(
-                  child: ImageIcon(
-                    AssetImage('assets/images/share-2.png'),
-                    color: Colors.black,
+                  child: Icon(
+                    Icons.share_outlined,
+                    // color: Colors.black,
                   ),
                   onTap: () => print('share pressed'),
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                InkWell(
+                  child: Icon(
+                    Icons.add_box_outlined,
+                    // color: Colors.black,
+                  ),
+                  onTap: () => print('add pressed'),
                 ),
                 Expanded(
                   child: Container(),
