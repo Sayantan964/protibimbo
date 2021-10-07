@@ -2,68 +2,76 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
-class VerifyPhoneNoScreen extends StatefulWidget{
-
+class VerifyPhoneNoScreen extends StatefulWidget {
   const VerifyPhoneNoScreen({Key? key}) : super(key: key);
 
   @override
-  VerifyPhoneNoScreenState createState()=>new VerifyPhoneNoScreenState();
+  VerifyPhoneNoScreenState createState() => new VerifyPhoneNoScreenState();
 }
 
-class VerifyPhoneNoScreenState extends State<VerifyPhoneNoScreen>{
+class VerifyPhoneNoScreenState extends State<VerifyPhoneNoScreen> {
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
-  Widget build(BuildContext context){
+  void dispose() {
+    super.dispose();
+  }
 
-    final double _screenWidth=MediaQuery.of(context).size.width;
-    final double _screenHeight=MediaQuery.of(context).size.height;
+  @override
+  Widget build(BuildContext context) {
+    final double _screenWidth = MediaQuery.of(context).size.width;
+    final double _screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.indigo,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
-        child:Container(
+        child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/images/onboarding_background_image.png"),
+              image:
+                  AssetImage("assets/images/onboarding_background_image.png"),
               fit: BoxFit.cover,
             ),
           ),
-          padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 15),
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
           width: _screenWidth,
           height: _screenHeight,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-            Container(
-            child:
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                  alignment: Alignment.centerLeft,
-                    child: IconButton(
-                      icon: Icon(Icons.arrow_back,
-                      color: Colors.white,
-                      ),
-                      onPressed: (){
-                        Navigator.pop(context);
-                      },
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      "OTP",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        // fontWeight: FontWeight.bold,
+              Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.arrow_back,
+                          color: Colors.white,
+                        ),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                       ),
                     ),
-                  ),
-                ],
+                    Container(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        "OTP",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          // fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-          ),
               SizedBox(
                 height: 80,
               ),
@@ -74,11 +82,11 @@ class VerifyPhoneNoScreenState extends State<VerifyPhoneNoScreen>{
                 child: Text(
                   "VERIFY  PHONE  NUMBER",
                   style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 23,
-                    fontWeight: FontWeight.bold
-                    // fontWeight: FontWeight.bold,
-                  ),
+                      color: Colors.white,
+                      fontSize: 23,
+                      fontWeight: FontWeight.bold
+                      // fontWeight: FontWeight.bold,
+                      ),
                 ),
               ),
               SizedBox(
@@ -90,13 +98,13 @@ class VerifyPhoneNoScreenState extends State<VerifyPhoneNoScreen>{
                 margin: EdgeInsets.only(top: 20),
                 child: Text(
                   "We sent a code to verify \n"
-                      "    your phone number",
+                  "    your phone number",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 15,
                       fontWeight: FontWeight.bold
-                    // fontWeight: FontWeight.bold,
-                  ),
+                      // fontWeight: FontWeight.bold,
+                      ),
                 ),
               ),
               SizedBox(
@@ -109,8 +117,8 @@ class VerifyPhoneNoScreenState extends State<VerifyPhoneNoScreen>{
                 child: Text(
                   "Sent to +91 8315468748",
                   style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 15,
+                    color: Colors.white70,
+                    fontSize: 15,
                   ),
                 ),
               ),
@@ -142,8 +150,8 @@ class VerifyPhoneNoScreenState extends State<VerifyPhoneNoScreen>{
                       color: Colors.white,
                       fontSize: 15,
                       fontWeight: FontWeight.bold
-                    // fontWeight: FontWeight.bold,
-                  ),
+                      // fontWeight: FontWeight.bold,
+                      ),
                 ),
               ),
               Container(
