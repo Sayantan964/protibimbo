@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:protibimbo/models/PostModel.dart';
+import 'package:protibimbo/views/screens/CreatePollScreen.dart';
 import 'package:protibimbo/views/screens/CustomNavigationDrawer.dart';
+import 'package:protibimbo/views/screens/NotificationScreen.dart';
+import 'package:protibimbo/views/screens/ProfileScreen.dart';
 import 'package:protibimbo/views/screens/UploadPostScreen.dart';
 
 import 'CustomPostWidget.dart';
@@ -14,6 +17,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final double _screenWidth = MediaQuery.of(context).size.width;
@@ -100,7 +113,10 @@ class HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              onTap: null,
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => NotificationScreen()));
+              },
             ),
             InkWell(
               child: Container(
@@ -154,80 +170,83 @@ class HomeScreenState extends State<HomeScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Row(
-                children: [
-                  InkWell(
-                    child: Container(
-                      padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
-                      margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: Colors.grey, width: .5),
-                        color: Color(0xffFFFFFF),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            'Your Feed               ',
-                            style: TextStyle(
-                              color: Colors.grey[600],
-                              fontSize: 14,
-                            ),
-                          ),
-                          Image.asset('assets/images/your_feed_icon.png'),
-                        ],
-                      ),
-                    ),
-                    onTap: null,
-                  ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  InkWell(
-                    child: Container(
-                      padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: Colors.grey, width: .5),
-                        color: Color(0xffFFFFFF),
-                      ),
-                      child: Image.asset('assets/images/friends_icon.png'),
-                    ),
-                    onTap: null,
-                  ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  InkWell(
-                    child: Container(
-                      padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: Colors.grey, width: .5),
-                        color: Color(0xffFFFFFF),
-                      ),
-                      child: Image.asset('assets/images/group_icon.png'),
-                    ),
-                    onTap: null,
-                  ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  InkWell(
-                    child: Container(
-                      padding: EdgeInsets.fromLTRB(13, 13, 13, 13),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: Colors.grey, width: .5),
-                        color: Color(0xffFFFFFF),
-                      ),
-                      child: Image.asset('assets/images/search_icon.png'),
-                    ),
-                    onTap: null,
-                  ),
-                ],
-              ),
+              // Row(
+              //   children: [
+              //     InkWell(
+              //       child: Container(
+              //         padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+              //         margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
+              //         decoration: BoxDecoration(
+              //           borderRadius: BorderRadius.circular(15),
+              //           border: Border.all(color: Colors.grey, width: .5),
+              //           color: Color(0xffFFFFFF),
+              //         ),
+              //         child: Row(
+              //           mainAxisSize: MainAxisSize.min,
+              //           children: [
+              //             Text(
+              //               'Your Feed               ',
+              //               style: TextStyle(
+              //                 color: Colors.grey[600],
+              //                 fontSize: 14,
+              //               ),
+              //             ),
+              //             Image.asset('assets/images/your_feed_icon.png'),
+              //           ],
+              //         ),
+              //       ),
+              //       onTap: null,
+              //     ),
+              //     SizedBox(
+              //       width: 8,
+              //     ),
+              //     InkWell(
+              //       child: Container(
+              //         padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+              //         decoration: BoxDecoration(
+              //           borderRadius: BorderRadius.circular(15),
+              //           border: Border.all(color: Colors.grey, width: .5),
+              //           color: Color(0xffFFFFFF),
+              //         ),
+              //         child: Image.asset('assets/images/friends_icon.png'),
+              //       ),
+              //       onTap: () {
+              //         Navigator.of(context).push(MaterialPageRoute(
+              //             builder: (context) => CreatePollScreen()));
+              //       },
+              //     ),
+              //     SizedBox(
+              //       width: 8,
+              //     ),
+              //     InkWell(
+              //       child: Container(
+              //         padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+              //         decoration: BoxDecoration(
+              //           borderRadius: BorderRadius.circular(15),
+              //           border: Border.all(color: Colors.grey, width: .5),
+              //           color: Color(0xffFFFFFF),
+              //         ),
+              //         child: Image.asset('assets/images/group_icon.png'),
+              //       ),
+              //       onTap: null,
+              //     ),
+              //     SizedBox(
+              //       width: 8,
+              //     ),
+              //     InkWell(
+              //       child: Container(
+              //         padding: EdgeInsets.fromLTRB(13, 13, 13, 13),
+              //         decoration: BoxDecoration(
+              //           borderRadius: BorderRadius.circular(15),
+              //           border: Border.all(color: Colors.grey, width: .5),
+              //           color: Color(0xffFFFFFF),
+              //         ),
+              //         child: Image.asset('assets/images/search_icon.png'),
+              //       ),
+              //       onTap: null,
+              //     ),
+              //   ],
+              // ),
               SizedBox(
                 height: 5,
               ),
@@ -236,15 +255,21 @@ class HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CircleAvatar(
-                      radius: 32.0,
-                      backgroundColor: Color(0xffFF3F80),
+                    InkWell(
                       child: CircleAvatar(
-                        radius: 30.0,
-                        backgroundColor: const Color(0xFF778899),
-                        backgroundImage:
-                            AssetImage('assets/images/profile_image.png'),
+                        radius: 32.0,
+                        backgroundColor: Color(0xffFF3F80),
+                        child: CircleAvatar(
+                          radius: 30.0,
+                          backgroundColor: const Color(0xFF778899),
+                          backgroundImage:
+                              AssetImage('assets/images/profile_image.png'),
+                        ),
                       ),
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ProfileScreen()));
+                      },
                     ),
                     Container(
                       height: 50,
