@@ -1,6 +1,6 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-import 'package:protibimbo/views/screens/ProfileScreen.dart';
+import 'package:protibimbo/views/screens/ProfileAboutScreen.dart';
 
 class FriendRequestProfileScreen extends StatefulWidget {
   const FriendRequestProfileScreen({Key? key}) : super(key: key);
@@ -98,18 +98,9 @@ class _FriendRequestProfileScreenState
                             ),
                           ),
                           onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => ProfileScreen()));
+                            // Navigator.of(context).push(MaterialPageRoute(
+                            //     builder: (context) => ProfileScreen()));
                           },
-                        ),
-                        Positioned(
-                          right: 20,
-                          top: 20,
-                          child: CircleAvatar(
-                            backgroundColor: Colors.white,
-                            radius: 15,
-                            child: Icon(Icons.edit),
-                          ),
                         ),
                       ],
                     ),

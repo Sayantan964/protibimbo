@@ -70,16 +70,6 @@ class _CustomPostWidgetState extends State<CustomPostWidget> {
                         )
                       ],
                     ),
-                    // Expanded(
-                    //   child: Container(),
-                    // ),
-                    // Padding(
-                    //   padding: const EdgeInsets.only(right: 5),
-                    //   child: IconButton(
-                    //     onPressed: null,
-                    //     icon: Icon(Icons.more_vert_outlined),
-                    //   ),
-                    // ),
                   ],
                 ),
               ),

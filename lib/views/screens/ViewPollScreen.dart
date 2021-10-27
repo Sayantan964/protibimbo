@@ -54,7 +54,7 @@ class _ViewPollScreenState extends State<ViewPollScreen> {
         ),
       ),
       body: Container(
-        margin: EdgeInsets.all(5.0),
+        margin: EdgeInsets.all(10.0),
         width: _screenWidth,
         height: _screenHeight,
         child: ListView.builder(
@@ -88,17 +88,17 @@ class _ViewPollScreenState extends State<ViewPollScreen> {
                       height: 10,
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
-                          width: 175,
+                          width: 155,
                           height: 75,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5.0),
-                            color: Colors.purpleAccent,
+                            color: Color(0xff74CD55),
                           ),
                           child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Text(
                                 'Scrolling feed',
@@ -127,13 +127,13 @@ class _ViewPollScreenState extends State<ViewPollScreen> {
                         ),
                         Container(
                           height: 75,
-                          width: 175,
+                          width: 155,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5.0),
-                            color: Colors.orange,
+                            color: Color(0xff2474EB),
                           ),
                           child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Text(
                                 'Watching Stories',

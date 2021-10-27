@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:protibimbo/views/screens/FriendListScreen.dart';
+import 'package:protibimbo/views/screens/ProfileAboutScreen.dart';
+import 'package:protibimbo/views/screens/UpdateProfileScreen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -9,16 +12,6 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     final double _screenWidth = MediaQuery.of(context).size.width;
@@ -51,13 +44,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Container(
-                        height: 200,
-                        width: _screenWidth,
-                        child: Image.asset(
-                          "assets/images/profilecoverphoto.png",
-                          fit: BoxFit.cover,
+                      InkWell(
+                        child: Container(
+                          height: 200,
+                          width: _screenWidth,
+                          child: Image.asset(
+                            "assets/images/profilecoverphoto.png",
+                            fit: BoxFit.cover,
+                          ),
                         ),
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => UpdateProfileScreen()));
+                        },
                       ),
                       Container(
                         height: 160,
@@ -94,7 +93,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => ProfileScreen()));
+                                builder: (context) => UpdateProfileScreen()));
                           },
                         ),
                         Positioned(
@@ -124,74 +123,348 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(
                 height: 10,
               ),
-              buildColumn(
-                  titleText: 'Work',
-                  subtitleText: 'Working at Bhishnu Solutions',
-                  imageAsset: 'assets/images/profileWork.png'),
-              buildColumn(
-                  titleText: 'Education',
-                  subtitleText: 'Completed MSC from Kolkata Univercity',
-                  imageAsset: 'assets/images/profileEducation.png'),
-              buildColumn(
-                  titleText: 'City',
-                  subtitleText: 'Kolkata, West Bengal',
-                  imageAsset: 'assets/images/profileCity.png'),
-              buildColumn(
-                  titleText: 'Relation',
-                  subtitleText: 'Single',
-                  imageAsset: 'assets/images/profileRelation.png'),
-              buildColumn(
-                  titleText: 'Hobbies',
-                  subtitleText: 'Painting, Fishing',
-                  imageAsset: 'assets/images/profileHobbies.png'),
-              buildColumn(
-                  titleText: 'Date of birth',
-                  subtitleText: '15th August 1992',
-                  imageAsset: 'assets/images/profileCalendar.png'),
+              Container(
+                height: 70,
+                width: _screenWidth,
+                padding: EdgeInsets.symmetric(horizontal: 5),
+                // color: Colors.green,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    InkWell(
+                      child: Container(
+                        height: 75,
+                        width: _screenWidth * 0.32,
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 35,
+                              width: 35,
+                              child: Image.asset(
+                                "assets/images/editProfile.png",
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Text(
+                              'Edit Profile',
+                              style: GoogleFonts.poppins(
+                                  color: Colors.grey[800],
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                          ],
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => UpdateProfileScreen()));
+                      },
+                    ),
+                    InkWell(
+                      child: Container(
+                        height: 75,
+                        width: _screenWidth * 0.32,
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 35,
+                              width: 35,
+                              child: Image.asset(
+                                "assets/images/friendList.png",
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Text(
+                              'Friends',
+                              style: GoogleFonts.poppins(
+                                  color: Colors.grey[800],
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                          ],
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => FriendListScreen()));
+                      },
+                    ),
+                    InkWell(
+                      child: Container(
+                        height: 75,
+                        width: _screenWidth * 0.32,
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 35,
+                              width: 35,
+                              child: Image.asset(
+                                "assets/images/profileAbout.png",
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Text(
+                              'About',
+                              style: GoogleFonts.poppins(
+                                  color: Colors.grey[800],
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                          ],
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ProfileAboutScreen()));
+                      },
+                    ),
+                    // Container(
+                    //   height: 75,
+                    //   width: _screenWidth * 0.22,
+                    //   child: Column(
+                    //     children: [
+                    //       Container(
+                    //         height: 35,
+                    //         width: 35,
+                    //         child: Image.asset(
+                    //           "assets/images/profileBlock.png",
+                    //           fit: BoxFit.cover,
+                    //         ),
+                    //       ),
+                    //       Text(
+                    //         'Block',
+                    //         style: GoogleFonts.poppins(
+                    //             color: Colors.grey[800],
+                    //             fontSize: 18,
+                    //             fontWeight: FontWeight.w600),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                color: Colors.white,
+                width: double.infinity,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    TextButton(
+                      onPressed: null,
+                      child: Text(
+                        'Gallery',
+                        style: GoogleFonts.poppins(
+                            color: Colors.grey[800],
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: null,
+                      child: Text(
+                        'Tagged',
+                        style: GoogleFonts.poppins(
+                            color: Colors.grey[600],
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          height: 90,
+                          width: 90,
+                          child: Card(
+                            child: Image.asset(
+                              "assets/images/gallery4.jpg",
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 90,
+                          width: 90,
+                          child: Card(
+                            child: Image.asset(
+                              "assets/images/gallery4.jpg",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 90,
+                          width: 90,
+                          child: Card(
+                            child: Image.asset(
+                              "assets/images/gallery4.jpg",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 90,
+                          width: 90,
+                          child: Card(
+                            child: Image.asset(
+                              "assets/images/gallery4.jpg",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          height: 90,
+                          width: 90,
+                          child: Card(
+                            child: Image.asset(
+                              "assets/images/gallery1.jpg",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 90,
+                          width: 90,
+                          child: Card(
+                            child: Image.asset(
+                              "assets/images/gallery1.jpg",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 90,
+                          width: 90,
+                          child: Card(
+                            child: Image.asset(
+                              "assets/images/gallery1.jpg",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 90,
+                          width: 90,
+                          child: Card(
+                            child: Image.asset(
+                              "assets/images/gallery1.jpg",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          height: 90,
+                          width: 90,
+                          child: Card(
+                            child: Image.asset(
+                              "assets/images/gallery2.jpg",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 90,
+                          width: 90,
+                          child: Card(
+                            child: Image.asset(
+                              "assets/images/gallery2.jpg",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 90,
+                          width: 90,
+                          child: Card(
+                            child: Image.asset(
+                              "assets/images/gallery2.jpg",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 90,
+                          width: 90,
+                          child: Card(
+                            child: Image.asset(
+                              "assets/images/gallery2.jpg",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          height: 90,
+                          width: 90,
+                          child: Card(
+                            child: Image.asset(
+                              "assets/images/gallery3.jpg",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 90,
+                          width: 90,
+                          child: Card(
+                            child: Image.asset(
+                              "assets/images/gallery3.jpg",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 90,
+                          width: 90,
+                          child: Card(
+                            child: Image.asset(
+                              "assets/images/gallery3.jpg",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 90,
+                          width: 90,
+                          child: Card(
+                            child: Image.asset(
+                              "assets/images/gallery3.jpg",
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  Padding buildColumn(
-      {required String titleText,
-      required String subtitleText,
-      required String imageAsset}) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(15, 5, 10, 10),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Image.asset(
-                imageAsset,
-                height: 25,
-                width: 25,
-                color: Colors.black87,
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Text(
-                titleText,
-                style: GoogleFonts.poppins(
-                    color: Colors.black87,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600),
-              ),
-            ],
-          ),
-          Text(subtitleText,
-              softWrap: true,
-              style: GoogleFonts.poppins(
-                  color: Colors.black87,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400))
-        ],
       ),
     );
   }

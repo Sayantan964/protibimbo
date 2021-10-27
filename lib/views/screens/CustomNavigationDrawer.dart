@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:protibimbo/views/screens/CreatePollScreen.dart';
+import 'package:protibimbo/views/screens/EventScreen.dart';
 import 'package:protibimbo/views/screens/ExplorePeopleScreen.dart';
+import 'package:protibimbo/views/screens/FAQScreen.dart';
+import 'package:protibimbo/views/screens/GroupScreen.dart';
 import 'package:protibimbo/views/screens/NotificationScreen.dart';
 import 'package:protibimbo/views/screens/HomeScreen.dart';
 import 'package:protibimbo/views/screens/MyPostScreen.dart';
 import 'package:protibimbo/views/screens/PlaylistScreen.dart';
+import 'package:protibimbo/views/screens/PrivacyAndPolicyScreen.dart';
+import 'package:protibimbo/views/screens/SupportScreen.dart';
+import 'package:protibimbo/views/screens/TermsAndConditionScreen.dart';
 import 'package:protibimbo/views/screens/ViewPollScreen.dart';
 
 class CustomNavigationDrawer extends StatefulWidget {
@@ -185,7 +191,10 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                         color: Colors.grey[800],
                       )),
                     ),
-                    onTap: null,
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => EventScreen()));
+                    },
                   ),
                   ListTile(
                     leading: Icon(
@@ -223,7 +232,10 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                         color: Colors.grey[800],
                       )),
                     ),
-                    onTap: null,
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => TermsAndConditionScreen()));
+                    },
                   ),
                   ListTile(
                     leading: Image.asset(
@@ -241,8 +253,73 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                         color: Colors.grey[800],
                       )),
                     ),
-                    onTap: null,
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => PrivacyAndPolicyScreen()));
+                    },
                   ),
+                  ListTile(
+                    leading: Image.asset(
+                      'assets/images/faq.png',
+                      height: 30,
+                      width: 30,
+                      color: Colors.black,
+                    ),
+                    title: Text(
+                      'FAQ',
+                      style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                        color: Colors.grey[800],
+                      )),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => FAQScreen()));
+                    },
+                  ),
+                  ListTile(
+                    leading: Image.asset(
+                      'assets/images/support.png',
+                      height: 30,
+                      width: 30,
+                      color: Colors.black,
+                    ),
+                    title: Text(
+                      'Support',
+                      style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                        color: Colors.grey[800],
+                      )),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => SupportScreen()));
+                    },
+                  ),
+                  // ListTile(
+                  //   leading: Icon(
+                  //     Icons.group_outlined,
+                  //     size: 30,
+                  //     color: Colors.grey[800],
+                  //   ),
+                  //   title: Text(
+                  //     'Group',
+                  //     style: GoogleFonts.poppins(
+                  //         textStyle: TextStyle(
+                  //       fontWeight: FontWeight.w600,
+                  //       fontSize: 20,
+                  //       color: Colors.grey[800],
+                  //     )),
+                  //   ),
+                  //   onTap: () {
+                  //     Navigator.of(context).push(MaterialPageRoute(
+                  //         builder: (context) => GroupScreen()));
+                  //   },
+                  // ),
                 ],
               ),
               SizedBox(

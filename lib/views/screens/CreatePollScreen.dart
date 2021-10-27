@@ -48,7 +48,7 @@ class _CreatePollScreenState extends State<CreatePollScreen>
           },
         ),
         title: Padding(
-          padding: const EdgeInsets.only(left: 30),
+          padding: const EdgeInsets.only(left: 30, right: 30),
           child: Text(
             ' Create Poll',
             textAlign: TextAlign.center,

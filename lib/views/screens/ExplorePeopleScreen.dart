@@ -116,15 +116,15 @@ class _ExplorePeopleScreenState extends State<ExplorePeopleScreen> {
                               child: CircleAvatar(
                                 radius: 30.0,
                                 backgroundColor: const Color(0xFF778899),
-                                backgroundImage: NetworkImage(
-                                    "https://st3.depositphotos.com/1008939/12595/i/950/depositphotos_125950056-stock-photo-taking-a-photo.jpg"),
+                                backgroundImage: AssetImage(
+                                  "assets/images/gallery3.jpg",
+                                ),
                               ),
                             ),
                           ),
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) =>
-                                    FriendRequestProfileScreen()));
+                                builder: (context) => FriendProfileScreen()));
                           },
                         ),
                         Expanded(
@@ -139,7 +139,7 @@ class _ExplorePeopleScreenState extends State<ExplorePeopleScreen> {
                                   child: RichText(
                                     textAlign: TextAlign.left,
                                     text: TextSpan(
-                                      text: 'Solandre',
+                                      text: 'Sunaina Malhotra',
                                       style: GoogleFonts.poppins(
                                         textStyle: TextStyle(
                                           fontSize: 20,
@@ -153,7 +153,7 @@ class _ExplorePeopleScreenState extends State<ExplorePeopleScreen> {
                                     Navigator.of(context).push(
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                FriendRequestProfileScreen()));
+                                                FriendProfileScreen()));
                                   },
                                 ),
                                 SizedBox(
@@ -292,14 +292,15 @@ class _ExplorePeopleScreenState extends State<ExplorePeopleScreen> {
                               child: CircleAvatar(
                                 radius: 30.0,
                                 backgroundColor: const Color(0xFF778899),
-                                backgroundImage: NetworkImage(
-                                    "https://st2.depositphotos.com/1008939/10092/i/950/depositphotos_100920976-stock-photo-businessman-taking-a-selfie.jpg"),
+                                backgroundImage:
+                                    AssetImage('assets/images/profilepic.png'),
                               ),
                             ),
                           ),
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => FriendProfileScreen()));
+                                builder: (context) =>
+                                    FriendRequestProfileScreen()));
                           },
                         ),
                         Expanded(
@@ -307,18 +308,25 @@ class _ExplorePeopleScreenState extends State<ExplorePeopleScreen> {
                             width: 200,
                             height: 70,
                             alignment: Alignment.centerLeft,
-                            child: RichText(
-                              textAlign: TextAlign.left,
-                              text: TextSpan(
-                                text: 'Martin',
-                                style: GoogleFonts.poppins(
-                                  textStyle: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.deepPurple,
+                            child: InkWell(
+                              child: RichText(
+                                textAlign: TextAlign.left,
+                                text: TextSpan(
+                                  text: 'Sudeshna Paul',
+                                  style: GoogleFonts.poppins(
+                                    textStyle: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.deepPurple,
+                                    ),
                                   ),
                                 ),
                               ),
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) =>
+                                        FriendRequestProfileScreen()));
+                              },
                             ),
                           ),
                         ),

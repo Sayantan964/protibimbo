@@ -3,7 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:protibimbo/models/PostModel.dart';
 import 'package:protibimbo/views/screens/CreatePollScreen.dart';
 import 'package:protibimbo/views/screens/CustomNavigationDrawer.dart';
+import 'package:protibimbo/views/screens/ExplorePeopleScreen.dart';
+import 'package:protibimbo/views/screens/ChatScreen.dart';
+import 'package:protibimbo/views/screens/GroupScreen.dart';
 import 'package:protibimbo/views/screens/NotificationScreen.dart';
+import 'package:protibimbo/views/screens/ProfileAboutScreen.dart';
 import 'package:protibimbo/views/screens/ProfileScreen.dart';
 import 'package:protibimbo/views/screens/UploadPostScreen.dart';
 
@@ -35,6 +39,7 @@ class HomeScreenState extends State<HomeScreen> {
       backgroundColor: Color(0xffF3F3F3),
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
+        backgroundColor: Color(0xffF3F3F3),
         automaticallyImplyLeading: false,
         leading: Padding(
           padding: EdgeInsets.symmetric(horizontal: 5),
@@ -49,116 +54,30 @@ class HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            InkWell(
-              child: Container(
-                padding: EdgeInsets.fromLTRB(10, 5, 5, 5),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(color: Colors.grey, width: .5),
-                  color: Color(0xffFFFFFF),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      'Requests  ',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 11,
-                      ),
-                    ),
-                    CircleAvatar(
-                      radius: 10.0,
-                      backgroundColor: Colors.green,
-                      child: Text(
-                        '8',
-                        style: TextStyle(color: Colors.white, fontSize: 12),
-                      ),
-                    ),
-                  ],
-                ),
+        title: Padding(
+          padding: const EdgeInsets.only(left: 45),
+          child: Text(
+            'PROTIBIMBO',
+            textAlign: TextAlign.center,
+            style: GoogleFonts.poppins(
+              textStyle: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.w700,
+                color: Color(0xff3E50B4),
               ),
-              onTap: null,
             ),
-            InkWell(
-              child: Container(
-                padding: EdgeInsets.fromLTRB(10, 5, 5, 5),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(color: Colors.grey, width: .5),
-                  color: Color(0xffFFFFFF),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Text(
-                      'Notifications  ',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 11,
-                      ),
-                    ),
-                    CircleAvatar(
-                      radius: 10.0,
-                      backgroundColor: Colors.indigo,
-                      child: Text(
-                        '6',
-                        style: TextStyle(color: Colors.white, fontSize: 12),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => NotificationScreen()));
-              },
-            ),
-            InkWell(
-              child: Container(
-                padding: EdgeInsets.fromLTRB(10, 5, 5, 5),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(color: Colors.grey, width: .5),
-                  color: Color(0xffFFFFFF),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Text(
-                      'Messages  ',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 11,
-                      ),
-                    ),
-                    CircleAvatar(
-                      radius: 10.0,
-                      backgroundColor: Colors.deepOrange,
-                      child: Text(
-                        '8',
-                        style: TextStyle(color: Colors.white, fontSize: 12),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              onTap: null,
-            ),
-            SizedBox(
-              width: 5,
-            )
-          ],
+          ),
         ),
-        backgroundColor: Color(0xffF3F3F3),
-        elevation: 0,
-        centerTitle: false,
-        titleSpacing: 0,
+        actions: [
+          IconButton(
+            onPressed: null,
+            icon: Icon(
+              Icons.home,
+              color: Color(0xff3E50B4),
+            ),
+            iconSize: 40,
+          ),
+        ],
       ),
       drawer: CustomNavigationDrawer(),
       body: Container(
@@ -168,87 +87,170 @@ class HomeScreenState extends State<HomeScreen> {
         child: SingleChildScrollView(
           physics: AlwaysScrollableScrollPhysics(),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // Row(
-              //   children: [
-              //     InkWell(
-              //       child: Container(
-              //         padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
-              //         margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
-              //         decoration: BoxDecoration(
-              //           borderRadius: BorderRadius.circular(15),
-              //           border: Border.all(color: Colors.grey, width: .5),
-              //           color: Color(0xffFFFFFF),
-              //         ),
-              //         child: Row(
-              //           mainAxisSize: MainAxisSize.min,
-              //           children: [
-              //             Text(
-              //               'Your Feed               ',
-              //               style: TextStyle(
-              //                 color: Colors.grey[600],
-              //                 fontSize: 14,
-              //               ),
-              //             ),
-              //             Image.asset('assets/images/your_feed_icon.png'),
-              //           ],
-              //         ),
-              //       ),
-              //       onTap: null,
-              //     ),
-              //     SizedBox(
-              //       width: 8,
-              //     ),
-              //     InkWell(
-              //       child: Container(
-              //         padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
-              //         decoration: BoxDecoration(
-              //           borderRadius: BorderRadius.circular(15),
-              //           border: Border.all(color: Colors.grey, width: .5),
-              //           color: Color(0xffFFFFFF),
-              //         ),
-              //         child: Image.asset('assets/images/friends_icon.png'),
-              //       ),
-              //       onTap: () {
-              //         Navigator.of(context).push(MaterialPageRoute(
-              //             builder: (context) => CreatePollScreen()));
-              //       },
-              //     ),
-              //     SizedBox(
-              //       width: 8,
-              //     ),
-              //     InkWell(
-              //       child: Container(
-              //         padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-              //         decoration: BoxDecoration(
-              //           borderRadius: BorderRadius.circular(15),
-              //           border: Border.all(color: Colors.grey, width: .5),
-              //           color: Color(0xffFFFFFF),
-              //         ),
-              //         child: Image.asset('assets/images/group_icon.png'),
-              //       ),
-              //       onTap: null,
-              //     ),
-              //     SizedBox(
-              //       width: 8,
-              //     ),
-              //     InkWell(
-              //       child: Container(
-              //         padding: EdgeInsets.fromLTRB(13, 13, 13, 13),
-              //         decoration: BoxDecoration(
-              //           borderRadius: BorderRadius.circular(15),
-              //           border: Border.all(color: Colors.grey, width: .5),
-              //           color: Color(0xffFFFFFF),
-              //         ),
-              //         child: Image.asset('assets/images/search_icon.png'),
-              //       ),
-              //       onTap: null,
-              //     ),
-              //   ],
-              // ),
               SizedBox(
-                height: 5,
+                height: 12,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(width: 5),
+                  InkWell(
+                    child: Stack(
+                      children: [
+                        Container(
+                          alignment: Alignment.bottomLeft,
+                          height: 30,
+                          // color: Colors.white,
+                          width: _screenWidth * 0.19,
+                          child: Text(
+                            'Requests  ',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 1,
+                          right: 1,
+                          child: CircleAvatar(
+                            radius: 10.0,
+                            backgroundColor: Colors.green,
+                            child: Text(
+                              '8',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 12),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => ExplorePeopleScreen()));
+                    },
+                  ),
+                  InkWell(
+                    child: Stack(
+                      children: [
+                        Container(
+                          alignment: Alignment.bottomLeft,
+                          height: 30,
+                          // color: Colors.white,
+                          width: _screenWidth * 0.25,
+                          child: Text(
+                            'Notifications',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 1,
+                          right: 1,
+                          child: CircleAvatar(
+                            radius: 10.0,
+                            backgroundColor: Color(0xff21328C),
+                            child: Text(
+                              '15',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 12),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => NotificationScreen()));
+                    },
+                  ),
+                  InkWell(
+                    child: Stack(
+                      children: [
+                        Container(
+                          alignment: Alignment.bottomLeft,
+                          height: 30,
+                          // color: Colors.white,
+                          width: _screenWidth * 0.21,
+                          child: Text(
+                            'Messages',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 1,
+                          right: 1,
+                          child: CircleAvatar(
+                            radius: 10.0,
+                            backgroundColor: Color(0xffD06212),
+                            child: Text(
+                              '5',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 12),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => ChatScreen()));
+                    },
+                  ),
+                  InkWell(
+                    child: Stack(
+                      children: [
+                        Container(
+                          alignment: Alignment.bottomLeft,
+                          height: 30,
+                          // color: Colors.white,
+                          width: _screenWidth * 0.16,
+                          child: Text(
+                            'Groups',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 1,
+                          right: 1,
+                          child: CircleAvatar(
+                            radius: 10.0,
+                            backgroundColor: Color(0xffCD2394),
+                            child: Text(
+                              '2',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 12),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => GroupScreen()));
+                    },
+                  ),
+                  SizedBox(
+                    width: 5,
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 10,
               ),
               Container(
                 margin: EdgeInsets.fromLTRB(15, 5, 5, 0),
